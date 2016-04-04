@@ -141,7 +141,9 @@ namespace WpfGlowWindow
                     _caption.Background = _border.BorderBrush;
                     break;
                 case (int)WindowsMessages.WM_SIZING:
-                    //Resizing(wParam, lParam);
+                    // Actually not needed: you can use MinWidth/MinHeight,
+                    // but in case you could use this code to force min width/height
+                    // Resizing(wParam, lParam);
                     break;
                 case (int)WindowsMessages.WM_EXITSIZEMOVE:
                     Cursor = Cursors.Arrow;

@@ -208,7 +208,7 @@ namespace WpfGlowWindow.Glow
                 lpfnWndProc = Marshal.GetFunctionPointerForDelegate(_wndProcDelegate)
             };
 
-            UInt16 classAtom = User32.RegisterClassW(ref windClass);
+            ushort classAtom = User32.RegisterClassW(ref windClass);
 
             int lastError = Marshal.GetLastWin32Error();
 
