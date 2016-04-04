@@ -141,7 +141,7 @@ namespace WpfGlowWindow
                     _caption.Background = _border.BorderBrush;
                     break;
                 case (int)WindowsMessages.WM_SIZING:
-                    Resizing(wParam, lParam);
+                    //Resizing(wParam, lParam);
                     break;
                 case (int)WindowsMessages.WM_EXITSIZEMOVE:
                     Cursor = Cursors.Arrow;
@@ -303,8 +303,8 @@ namespace WpfGlowWindow
                     r.bottom = (int)(r.top + MinHeight);
                 }
             }
-            IntPtr ptr = wParam;
-            Marshal.StructureToPtr(r, ptr, false);
+
+            Marshal.StructureToPtr(r, lParam, false);
         }
 
         #endregion

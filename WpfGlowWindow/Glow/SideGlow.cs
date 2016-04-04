@@ -289,8 +289,6 @@ namespace WpfGlowWindow.Glow
             Graphics g = Graphics.FromImage(bmp);
             List<System.Windows.Media.Color> colorMap = _parentWindowIsFocused ? _activeColors : _inactiveColors;
 
-            const double margin = 5;
-
             if (_side == Dock.Top || _side == Dock.Bottom)
             {
                 for (int i = 0; i < _alphas.Count; i++)
@@ -301,7 +299,7 @@ namespace WpfGlowWindow.Glow
                     const int xLeft = Size * 2 - 1;
                     int xRight = width - Size * 2;
                     g.DrawLine(pen, new Point(xLeft, y), new Point(xRight, y));
-                    double a = _alphas[i] / (Size + margin + i);
+                    double a = _alphas[i] / (Size + i);
                     for (int j = 0; j < Size - 1; j++)
                     {
                         double al = Math.Max(0, _alphas[i] - a * j);
@@ -310,7 +308,7 @@ namespace WpfGlowWindow.Glow
                         g.FillRectangle(b, xLeft - 1 - j, y, 1, 1);
                         g.FillRectangle(b, xRight + 1 + j, y, 1, 1);
                     }
-                    for (int j = Size - 1; j < Size + margin + 1 + i; j++)
+                    for (int j = Size - 1; j < Size + 1 + i; j++)
                     {
                         double al = Math.Max(0, _alphas[i] - a * j) / 2;
                         color = Color.FromArgb((int)al, colorMap[i].R, colorMap[i].G, colorMap[i].B);
@@ -331,7 +329,7 @@ namespace WpfGlowWindow.Glow
                     int yBottom = height - Size * 2 - 1;
                     g.DrawLine(pen, new Point(x, yTop), new Point(x, yBottom));
 
-                    double a = _alphas[i] / (Size + margin + i);
+                    double a = _alphas[i] / (Size + i);
                     for (int j = 0; j < Size; j++)
                     {
                         double al = Math.Max(0, _alphas[i] - a * j);
@@ -340,7 +338,7 @@ namespace WpfGlowWindow.Glow
                         g.FillRectangle(b, x, yTop - 1 - j, 1, 1);
                         g.FillRectangle(b, x, yBottom + 1 + j, 1, 1);
                     }
-                    for (int j = Size; j < Size + margin + i; j++)
+                    for (int j = Size; j < Size + i; j++)
                     {
                         double al = Math.Max(0, _alphas[i] - a * j) / 2;
                         color = Color.FromArgb((int)al, colorMap[i].R, colorMap[i].G, colorMap[i].B);
