@@ -2,10 +2,6 @@
 Thumbs.db
 ehthumbs.db
 
-WpfGlowWindow/bin/
-WpfGlowWindow/obj/
-WpfGlowWindow/.vs
-
 # Folder config file
 Desktop.ini
 
@@ -49,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# custom
+WpfGlowWindow/bin/
+WpfGlowWindow/obj/
+WpfGlowWindow/.vs/
