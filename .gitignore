@@ -2,8 +2,8 @@
 Thumbs.db
 ehthumbs.db
 
-WpfGlowWindow/bin
-WpfGlowWindow/obj
+WpfGlowWindow/bin/
+WpfGlowWindow/obj/
 
 # Folder config file
 Desktop.ini
